@@ -93,7 +93,7 @@ public class ItemWand extends Item implements ICustomDescription {
 		ItemDunamisContainer container = ThaumaturgyAPI.getItemDunamisContainer(itemStack);
 
 		for (DunamisStack stack : container.getDunami()) {
-			lastDesc.append("\n").append(stack.getDunamis().getName()).append(" ").append(stack.amount);
+			lastDesc.append("\n").append(stack.getDunamis().getTranslatedName()).append(" ").append(stack.amount);
 		}
 
 		return firstDesc + lastDesc;

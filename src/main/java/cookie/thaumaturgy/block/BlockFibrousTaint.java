@@ -48,7 +48,6 @@ public class BlockFibrousTaint extends Block implements IBonemealable {
 		if (!world.isClientSide) {
 			if (world.areBlocksLoaded(x, y, z, 16) && rand.nextInt(4) == 0) {
 				spreadRandomly(world, x, y, z, rand);
-				System.out.println("SPREAD");
 			}
 		}
 	}
