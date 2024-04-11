@@ -1,9 +1,3 @@
-item.thaumaturgy.wandcap.iron.name=Iron Wand Cap
-item.thaumaturgy.wandcap.iron.desc=The most basic tier of wand caps.
-
 item.thaumaturgy.wand.charge.desc=Charge
-item.thaumaturgy.wand.ironcap.wood.name=§4Iron-Capped Wooden Wand
-item.thaumaturgy.wand.ironcap.wood.desc=The most basic tier of wands.
-
-item.thaumaturgy.book.thaum.name=Thaumaturgy and You
-item.thaumaturgy.book.thaum.desc=A guide to all things thaumaturgical.
+item.thaumaturgy.wand_basic.name=§4Gold-Capped Wooden Wand
+item.thaumaturgy.wand_basic.desc=The most basic tier of wands.
