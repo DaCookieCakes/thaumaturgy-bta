@@ -2,6 +2,7 @@ package cookie.thaumaturgy.item;
 
 import com.mojang.nbt.CompoundTag;
 import cookie.thaumaturgy.api.*;
+import cookie.thaumaturgy.block.ThaumBlocks;
 import cookie.thaumaturgy.block.entity.TileEntityNode;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.entity.EntityItem;
@@ -12,6 +13,8 @@ import net.minecraft.core.lang.I18n;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 import sunsetsatellite.catalyst.core.util.ICustomDescription;
+
+import java.util.Arrays;
 
 public class ItemWand extends Item implements ICustomDescription {
 
@@ -29,12 +32,12 @@ public class ItemWand extends Item implements ICustomDescription {
 	}
 
 	@Override
-	public boolean onItemUse(ItemStack itemstack, EntityPlayer player, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
+	public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
 		if (world.getBlock(blockX, blockY, blockZ) == Block.bookshelfPlanksOak) {
 			player.swingItem();
 
 			// Spawn a 'Thaumaturgy and You' book at the bookshelf.
-			EntityItem item = new EntityItem(world, blockX, blockY, blockZ, new ItemStack(ThaumItems.THAUMATURGY_AND_YOU));
+			EntityItem item = new EntityItem(world, blockX, blockY, blockZ, new ItemStack(ThaumBlocks.NONPLACEABLE_BOOK));
 			item.setPos(blockX, blockY + 0.5F, blockZ);
 			world.entityJoinedWorld(item);
 
@@ -59,7 +62,7 @@ public class ItemWand extends Item implements ICustomDescription {
 		// Check if the node and player aren't null. If it passes, lower the node count and raise the player's mana.
 		TileEntityNode tileEntityNode = (TileEntityNode) world.getBlockTileEntity(blockX, blockY, blockZ);
 		if (tileEntityNode != null && player != null) {
-			ItemDunamisContainer container = ThaumaturgyAPI.getItemDunamisContainer(itemstack);
+			ItemDunamisContainer container = ThaumaturgyAPI.getItemDunamisContainer(itemStack);
 			for (int i = 0; i < Dunami.DUNAMI.size(); i++) {
 				Dunamis dunamis = Dunami.DUNAMI.get(i);
 				if (tileEntityNode.hasDunamis(dunamis)) {
@@ -82,19 +85,17 @@ public class ItemWand extends Item implements ICustomDescription {
 	}
 
 	@Override
-	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer player) {
-		if (player != null) {
-			IDunamisContainer container = ThaumaturgyAPI.getItemDunamisContainer(itemstack);
-			for (DunamisStack stack : container.getDunami()) {
-				player.addChatMessage("Type: " + stack.getDunamis().getName() + " Amount: " + stack.amount);
-			}
-		}
-		return itemstack;
-	}
-
-	@Override
 	public String getDescription(ItemStack itemStack) {
 		I18n i18n = I18n.getInstance();
-		return "§125 " + i18n.translateDescKey("item.thaumaturgy.wand.charge");
+		String firstDesc = "§125 " + i18n.translateDescKey("item.thaumaturgy.wand.charge");
+		StringBuilder lastDesc = new StringBuilder();
+
+		ItemDunamisContainer container = ThaumaturgyAPI.getItemDunamisContainer(itemStack);
+
+		for (DunamisStack stack : container.getDunami()) {
+			lastDesc.append("\n").append(stack.getDunamis().getTranslatedName()).append(" ").append(stack.amount);
+		}
+
+		return firstDesc + lastDesc;
 	}
 }

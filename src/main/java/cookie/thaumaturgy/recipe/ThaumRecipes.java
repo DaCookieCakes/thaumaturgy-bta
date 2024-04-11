@@ -14,13 +14,8 @@ public class ThaumRecipes implements RecipeEntrypoint {
 	@Override
 	public void onRecipesReady() {
 		RecipeBuilder.Shaped(MOD_ID)
-			.setShape(" 1 ", "1 1")
-			.addInput('1', Item.ingotIron)
-			.create("iron_wand_cap", new ItemStack(ThaumItems.WAND_CAP_IRON, 2));
-
-		RecipeBuilder.Shaped(MOD_ID)
 			.setShape("  1", " 2 ", "1  ")
-			.addInput('1', ThaumItems.WAND_CAP_IRON)
+			.addInput('1', Item.ingotGold)
 			.addInput('2', Item.stick)
 			.create("iron_capped_wooden_wand", new ItemStack(ThaumItems.WAND_BASIC));
 	}
