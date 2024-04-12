@@ -1,5 +1,7 @@
 package cookie.thaumaturgy.api;
 
+import net.minecraft.core.util.helper.Color;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,49 +13,37 @@ public class Dunami {
 
 	public static final Dunamis AIR = new DunamisBuilder(MOD_ID)
 		.setName("air")
-		.setColorR(0.68f)
-		.setColorG(0.85f)
-		.setColorB(0.90f)
+		.setColor(new Color().setRGB(173, 216, 230))
 		.setTexture(0)
 		.build();
 
 	public static final Dunamis EARTH = new DunamisBuilder(MOD_ID)
 		.setName("earth")
-		.setColorR(0.0f)
-		.setColorG(1.0f)
-		.setColorB(0.0f)
+		.setColor(new Color().setRGB(0, 255, 0))
 		.setTexture(0)
 		.build();
 
 	public static final Dunamis FIRE = new DunamisBuilder(MOD_ID)
 		.setName("fire")
-		.setColorR(1.0f)
-		.setColorG(0.0f)
-		.setColorB(0.0f)
+		.setColor(new Color().setRGB(255, 0, 0))
 		.setTexture(0)
 		.build();
 
 	public static final Dunamis WATER = new DunamisBuilder(MOD_ID)
 		.setName("water")
-		.setColorR(0.0f)
-		.setColorG(0.0f)
-		.setColorB(1.0f)
+		.setColor(new Color().setRGB(0, 0, 255))
 		.setTexture(0)
 		.build();
 
 	public static final Dunamis ORDER = new DunamisBuilder(MOD_ID)
 		.setName("order")
-		.setColorR(1.0f)
-		.setColorG(1.0f)
-		.setColorB(1.0f)
+		.setColor(new Color().setRGB(255, 255, 255))
 		.setTexture(0)
 		.build();
 
 	public static final Dunamis CHAOS = new DunamisBuilder(MOD_ID)
 		.setName("chaos")
-		.setColorR(0.2f)
-		.setColorG(0.2f)
-		.setColorB(0.2f)
+		.setColor(new Color().setRGB(30, 30, 30))
 		.setTexture(0)
 		.build();
 

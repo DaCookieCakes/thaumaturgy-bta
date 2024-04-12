@@ -120,9 +120,9 @@ public class TileEntityIris extends TileEntity implements IDunamisContainer {
 								x,
 								z,
 								0.0,
-								dunamis.getR(),
-								dunamis.getG(),
-								dunamis.getB()
+								dunamis.getColor().getRed(),
+								dunamis.getColor().getGreen(),
+								dunamis.getColor().getBlue()
 							);
 						}
 					}

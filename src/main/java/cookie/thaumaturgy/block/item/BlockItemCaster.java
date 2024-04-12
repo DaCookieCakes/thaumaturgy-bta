@@ -4,7 +4,6 @@ import cookie.thaumaturgy.api.DunamisStack;
 import cookie.thaumaturgy.api.ParticleManager;
 import cookie.thaumaturgy.block.BlockIris;
 import cookie.thaumaturgy.block.entity.TileEntityIris;
-import cookie.thaumaturgy.entity.FXDunamis;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.ItemStack;
@@ -21,14 +20,14 @@ public class BlockItemCaster extends BlockItemNonplaceable {
 	// TODO this
 	@Override
 	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
-		player.addChatMessage("CASTS SPELL");
+		player.addChatMessage("TEMP: Casts spell!");
 		return stack;
 	}
 
 	@Override
 	public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
 		if (!world.isClientSide) {
-			if (player != null && world.getBlock(blockX, blockY, blockZ) instanceof BlockIris) {
+			if (player != null && world.getBlockTileEntity(blockX, blockY, blockZ) instanceof TileEntityIris) {
 				TileEntityIris tileEntity = (TileEntityIris) world.getBlockTileEntity(blockX, blockY, blockZ);
 				I18n i18n = I18n.getInstance();
 
@@ -53,9 +52,9 @@ public class BlockItemCaster extends BlockItemNonplaceable {
 								blockX,
 								blockZ,
 								0.0f,
-								dunami.getDunamis().getR(),
-								dunami.getDunamis().getG(),
-								dunami.getDunamis().getB()
+								dunami.getDunamis().getColor().getRed(),
+								dunami.getDunamis().getColor().getGreen(),
+								dunami.getDunamis().getColor().getBlue()
 							);
 						}
 					}

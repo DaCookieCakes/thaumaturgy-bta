@@ -13,7 +13,7 @@ public class FXDunamis extends EntityFX {
 	double centreZ;
 	double centreRadius;
 
-	public FXDunamis(World world, double x, double y, double z, double motionX, double motionY, double motionZ, double centreX, double centreZ, double centreRadius, float R, float G, float B) {
+	public FXDunamis(World world, double x, double y, double z, double motionX, double motionY, double motionZ, double centreX, double centreZ, double centreRadius, int R, int G, int B) {
 		super(world, x, y, z, motionX, motionY, motionZ);
 		setSize(0.5f, 0.5f);
 
