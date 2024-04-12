@@ -11,9 +11,10 @@ public class BlockItemBook extends BlockItemNonplaceable{
 		setMaxStackSize(1);
 	}
 
+	// TODO this
 	@Override
 	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer player) {
-		player.addChatMessage("BOOK.");
+		player.addChatMessage("TEMP: Right click an Ironwood log, ya dingus!");
 		return itemstack;
 	}
 }

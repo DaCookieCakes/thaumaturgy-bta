@@ -11,37 +11,49 @@ public class Dunami {
 
 	public static final Dunamis AIR = new DunamisBuilder(MOD_ID)
 		.setName("air")
-		.setColor(-1)
+		.setColorR(0.68f)
+		.setColorG(0.85f)
+		.setColorB(0.90f)
 		.setTexture(0)
 		.build();
 
 	public static final Dunamis EARTH = new DunamisBuilder(MOD_ID)
 		.setName("earth")
-		.setColor(-1)
+		.setColorR(0.0f)
+		.setColorG(1.0f)
+		.setColorB(0.0f)
 		.setTexture(0)
 		.build();
 
 	public static final Dunamis FIRE = new DunamisBuilder(MOD_ID)
 		.setName("fire")
-		.setColor(-1)
+		.setColorR(1.0f)
+		.setColorG(0.0f)
+		.setColorB(0.0f)
 		.setTexture(0)
 		.build();
 
 	public static final Dunamis WATER = new DunamisBuilder(MOD_ID)
 		.setName("water")
-		.setColor(-1)
+		.setColorR(0.0f)
+		.setColorG(0.0f)
+		.setColorB(1.0f)
 		.setTexture(0)
 		.build();
 
 	public static final Dunamis ORDER = new DunamisBuilder(MOD_ID)
 		.setName("order")
-		.setColor(-1)
+		.setColorR(1.0f)
+		.setColorG(1.0f)
+		.setColorB(1.0f)
 		.setTexture(0)
 		.build();
 
 	public static final Dunamis CHAOS = new DunamisBuilder(MOD_ID)
 		.setName("chaos")
-		.setColor(-1)
+		.setColorR(0.2f)
+		.setColorG(0.2f)
+		.setColorB(0.2f)
 		.setTexture(0)
 		.build();
 

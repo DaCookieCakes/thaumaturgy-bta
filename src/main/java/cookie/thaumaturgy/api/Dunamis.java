@@ -6,33 +6,43 @@ import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-import static cookie.thaumaturgy.Thaumaturgy.MOD_ID;
-
 public class Dunamis {
 	protected final String MOD_ID;
 	protected final String name;
-	protected final int color;
+	protected final float R;
+	protected final float G;
+	protected final float B;
 	protected final int texture;
 	protected final List<Dunamis> composition;
 
-	public Dunamis(String MOD_ID, String name, int color, int texture, @Nullable List<Dunamis> composition) {
+	public Dunamis(String MOD_ID, String name, float R, float G, float B, int texture, @Nullable List<Dunamis> composition) {
 		this.MOD_ID = MOD_ID;
 		this.name = name;
-		this.color = color;
+		this.R = R;
+		this.G = G;
+		this.B = B;
 		this.texture = texture;
 		this.composition = composition != null ? composition : new ArrayList<>();
 	}
 
-	public Dunamis(String MOD_ID, String name, int color, int texture) {
-		this(MOD_ID, name, color, texture, null);
+	public Dunamis(String MOD_ID, String name, int R, int G, int B, int texture) {
+		this(MOD_ID, name, R, G, B, texture, null);
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public int getColor() {
-		return color;
+	public float getR() {
+		return R;
+	}
+
+	public float getG() {
+		return G;
+	}
+
+	public float getB() {
+		return B;
 	}
 
 	public int getTexture() {

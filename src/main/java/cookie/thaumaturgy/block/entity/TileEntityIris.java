@@ -7,7 +7,7 @@ import net.minecraft.core.block.entity.TileEntity;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TileEntityNode extends TileEntity implements IDunamisContainer {
+public class TileEntityIris extends TileEntity implements IDunamisContainer {
 	private int regenRate;
 	private int particleRate;
 	private final Map<Dunamis, Integer> dunami = new HashMap<>();
@@ -76,7 +76,7 @@ public class TileEntityNode extends TileEntity implements IDunamisContainer {
 		return stacks;
 	}
 
-	public TileEntityNode() {
+	public TileEntityIris() {
 
 	}
 
@@ -100,17 +100,30 @@ public class TileEntityNode extends TileEntity implements IDunamisContainer {
 				}
 			}
 
-			// TODO - find or create more particles!
-			// This spawns 5 of the corresponding particles for each mana type.
 			if (particleRate++ >= 100) {
 				particleRate = 0;
-				for (int i = 0; i < 5; i++) {
+				for (int i = 0; i < 8; i++) {
 					for (Dunamis dunamis : this.dunami.keySet()) {
 						if (hasDunamis(dunamis)) {
-							double randX = x + worldObj.rand.nextDouble();
-							double randY = y + worldObj.rand.nextDouble();
-							double randZ = z + worldObj.rand.nextDouble();
-							worldObj.spawnParticle(ThaumaturgyAPI.getParticleForDunamis(dunamis), randX, randY, randZ, 0, 0, 0);
+							double randX = worldObj.rand.nextDouble() + x;
+							double randY = worldObj.rand.nextDouble() + y;
+							double randZ = worldObj.rand.nextDouble() + z;
+
+							ParticleManager.spawnDunamisParticle(
+								worldObj,
+								randX,
+								randY,
+								randZ,
+								0.0,
+								0.0,
+								0.0,
+								x,
+								z,
+								0.0,
+								dunamis.getR(),
+								dunamis.getG(),
+								dunamis.getB()
+							);
 						}
 					}
 				}
