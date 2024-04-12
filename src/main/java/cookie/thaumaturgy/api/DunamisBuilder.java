@@ -2,10 +2,12 @@ package cookie.thaumaturgy.api;
 
 import java.util.List;
 
+import java.awt.Color;
+
 public class DunamisBuilder {
 	private final String MOD_ID;
 	private String name;
-	private int color;
+	private Color color;
 	private int texture;
 	private List<Dunamis> composition;
 
@@ -18,7 +20,7 @@ public class DunamisBuilder {
 		return this;
 	}
 
-	public DunamisBuilder setColor(int color) {
+	public DunamisBuilder setColor(Color color) {
 		this.color = color;
 		return this;
 	}

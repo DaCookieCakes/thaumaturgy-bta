@@ -23,8 +23,10 @@ public class Thaumaturgy implements ModInitializer, GameStartEntrypoint, ClientS
 
 	@Override
 	public void beforeGameStart() {
-		ThaumItems.initializeItems();
+		ThaumParticles.initializeParticles();
+
 		ThaumBlocks.initializeBlocks();
+		ThaumItems.initializeItems();
 		ThaumBlocks.initializeTileEntities();
 	}
 

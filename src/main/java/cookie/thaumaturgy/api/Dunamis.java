@@ -6,16 +6,16 @@ import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-import static cookie.thaumaturgy.Thaumaturgy.MOD_ID;
+import java.awt.Color;
 
 public class Dunamis {
 	protected final String MOD_ID;
 	protected final String name;
-	protected final int color;
+	private final Color color;
 	protected final int texture;
 	protected final List<Dunamis> composition;
 
-	public Dunamis(String MOD_ID, String name, int color, int texture, @Nullable List<Dunamis> composition) {
+	public Dunamis(String MOD_ID, String name, Color color, int texture, @Nullable List<Dunamis> composition) {
 		this.MOD_ID = MOD_ID;
 		this.name = name;
 		this.color = color;
@@ -23,7 +23,7 @@ public class Dunamis {
 		this.composition = composition != null ? composition : new ArrayList<>();
 	}
 
-	public Dunamis(String MOD_ID, String name, int color, int texture) {
+	public Dunamis(String MOD_ID, String name, Color color, int texture) {
 		this(MOD_ID, name, color, texture, null);
 	}
 
@@ -31,7 +31,7 @@ public class Dunamis {
 		return name;
 	}
 
-	public int getColor() {
+	public Color getColor() {
 		return color;
 	}
 
