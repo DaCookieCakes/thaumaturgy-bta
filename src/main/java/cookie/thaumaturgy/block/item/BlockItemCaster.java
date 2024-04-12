@@ -52,9 +52,7 @@ public class BlockItemCaster extends BlockItemNonplaceable {
 								blockX,
 								blockZ,
 								0.0f,
-								dunami.getDunamis().getColor().getRed(),
-								dunami.getDunamis().getColor().getGreen(),
-								dunami.getDunamis().getColor().getBlue()
+								dunami.getDunamis().getColor()
 							);
 						}
 					}

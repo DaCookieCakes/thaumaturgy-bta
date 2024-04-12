@@ -6,6 +6,8 @@ import net.minecraft.core.world.World;
 import org.lwjgl.opengl.GL11;
 import turniplabs.halplibe.helper.TextureHelper;
 
+import java.awt.*;
+
 import static cookie.thaumaturgy.Thaumaturgy.MOD_ID;
 
 public class FXDunamis extends EntityFX {
@@ -13,7 +15,7 @@ public class FXDunamis extends EntityFX {
 	double centreZ;
 	double centreRadius;
 
-	public FXDunamis(World world, double x, double y, double z, double motionX, double motionY, double motionZ, double centreX, double centreZ, double centreRadius, int R, int G, int B) {
+	public FXDunamis(World world, double x, double y, double z, double motionX, double motionY, double motionZ, double centreX, double centreZ, double centreRadius, Color color) {
 		super(world, x, y, z, motionX, motionY, motionZ);
 		setSize(0.5f, 0.5f);
 
@@ -23,9 +25,9 @@ public class FXDunamis extends EntityFX {
 		this.centreZ = centreZ;
 		this.centreRadius = centreRadius;
 
-		particleRed = R;
-		particleGreen = G;
-		particleBlue = B;
+		particleRed = color.getRed() / 255F;
+		particleGreen = color.getGreen() / 255F;
+		particleBlue = color.getBlue() / 255F;
 	}
 
 	@Override

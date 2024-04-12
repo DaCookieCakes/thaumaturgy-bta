@@ -1,8 +1,8 @@
 package cookie.thaumaturgy.api;
 
-import net.minecraft.core.util.helper.Color;
-
 import java.util.List;
+
+import java.awt.Color;
 
 public class DunamisBuilder {
 	private final String MOD_ID;

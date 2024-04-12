@@ -1,11 +1,12 @@
 package cookie.thaumaturgy.api;
 
 import net.minecraft.core.lang.I18n;
-import net.minecraft.core.util.helper.Color;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
+
+import java.awt.Color;
 
 public class Dunamis {
 	protected final String MOD_ID;

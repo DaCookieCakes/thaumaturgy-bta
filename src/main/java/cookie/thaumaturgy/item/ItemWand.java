@@ -103,9 +103,7 @@ public class ItemWand extends Item implements ICustomDescription {
 									blockX,
 									blockZ,
 									0.0f,
-									dunami.getDunamis().getColor().getRed(),
-									dunami.getDunamis().getColor().getGreen(),
-									dunami.getDunamis().getColor().getBlue()
+									dunami.getDunamis().getColor()
 								);
 							}
 						}
